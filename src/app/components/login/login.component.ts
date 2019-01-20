@@ -8,11 +8,11 @@ import { LoginService } from '../../providers/login.service';
 })
 export class LoginComponent implements OnInit {
   user: any;
+  message: string;
   errors: any = {
     errorAll: false,
-    errorPass: false,
     errorUser: false,
-    errorUserLog: false
+    errorLogin: false
   };
 
   constructor(private login: LoginService) {
@@ -23,23 +23,22 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
+    this.errors.errorAll = false;
+    this.errors.errorUser = false;
+    this.errors.errorLogin = false;
     if (this.user.userName && this.user.password !== '') {
-      if (this.user.password.length <= 7) {
-        this.errors.errorUserLog = false;
-        this.errors.errorAll = false;
-        this.errors.errorPass = true;
+        //console.log(this.user);
+        this.login.loginFunction(this.user).subscribe((res: any) => {
+          //console.log(res)
+          if(res.status == false){
+            this.errors.errorLogin = true;
+            this.message = res.message;
+          } else {
+            console.log(res);
+          }
+        });
+        
       } else {
-        this.errors.errorUserLog = false;
-        this.errors.errorPass = false;
-        this.errors.errorAll = false;
-        console.log(this.user);
-        this.login.loginFunction(this.user).subscribe((res) => {
-          console.log(res)
-        })
-        }
-      } else {
-      this.errors.errorUserLog = false;
-      this.errors.errorPass = false;
       this.errors.errorAll = true;
     }
   }

@@ -1,35 +1,33 @@
 <div class="container">
-  <div class="wrapper">
-      <form #usuarioForm="ngForm" (ngSubmit)="onSubmit()" class="form-login">
+    <div class="wrapper">
+        <form #usuarioForm="ngForm" (ngSubmit)="onSubmit()" class="form-login">
 
-          <h3 class="form-login-heading">Login</h3>
-          <hr class="colorgraph">
-          <br>
+            <h3 class="form-login-heading">Potato's System</h3>
+            <hr class="colorgraph">
+            <br>
 
-          <div class="alert alert-info">
-              <strong>Ingrese sus datos.</strong>
-          </div>
+            <div class="alert alert-info" style="text-align: center;">
+                <strong>Login</strong>
+            </div>
 
-          <input type="email" class="form-control" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}" placeholder="Username"/>
+            <input type="email" class="form-control" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"
+                placeholder="Nombre de Usuario" />
 
-          <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" placeholder="Password"/>
+            <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
+                placeholder="Contraseña" />
 
-          <div *ngIf="errors.errorPass" class="alert alert-danger" role="alert">
-              <strong> La contraseña debe contener al menos 8 carácteres </strong>
-          </div>
+            <div *ngIf="errors.errorAll" class="alert alert-danger" role="alert">
+                <strong> Debe llenar todos los espacios </strong>
+            </div>
 
-          <div *ngIf="errors.errorUserLog" class="alert alert-danger" role="alert">
-              <strong> The User or Password is Wrong! </strong>
-          </div>
+            <div *ngIf="errors.errorLogin" class="alert alert-danger" role="alert">
+                <strong> {{message}} </strong>
+            </div>
 
-          <div *ngIf="errors.errorAll" class="alert alert-danger" role="alert">
-              <strong> Debe llenar todos los espacios </strong>
-          </div>
+            <button class="btn btn-lg btn-primary btn-block" type="Submit">Ingresar</button>
 
-          <button class="btn btn-lg btn-primary btn-block" type="Submit">Login</button>
-          
-          <!-- {{user.name ? user.name : user.remember_token}} -->
-                  
-      </form>
-  </div>
+            <!-- {{user.name ? user.name : user.remember_token}} -->
+
+        </form>
+    </div>
 </div>
