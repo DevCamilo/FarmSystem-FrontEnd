@@ -6,13 +6,16 @@
 
                 <h3 class="form-login-heading">Login</h3>
                 <hr class="colorgraph">
-                <br>
+                
+                <div class="alert alert-primary" style="text-align: center" role="alert">
+                    <strong> Dashboard </strong>
+                </div>
 
                 <input type="email" class="form-control" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"
-                    placeholder="Nombre de Usuario" />
-                <br>
+                    placeholder="&#xf007;  Nombre de Usuario" />
+
                 <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
-                    placeholder="Contraseña" />
+                    placeholder="&#xf13e;  Contraseña" />
 
                 <div *ngIf="errors.errorAll" class="alert alert-danger" role="alert">
                     <strong> Debe llenar todos los campos </strong>
