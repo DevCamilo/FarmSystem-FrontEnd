@@ -11,7 +11,6 @@ export class LoginComponent implements OnInit {
   message: string;
   errors: any = {
     errorAll: false,
-    errorUser: false,
     errorLogin: false
   };
 
@@ -24,7 +23,6 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.errors.errorAll = false;
-    this.errors.errorUser = false;
     this.errors.errorLogin = false;
     if (this.user.userName && this.user.password !== '') {
         //console.log(this.user);

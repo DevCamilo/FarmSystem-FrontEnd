@@ -1,33 +1,35 @@
-<div class="container">
-    <div class="wrapper">
-        <form #usuarioForm="ngForm" (ngSubmit)="onSubmit()" class="form-login">
+<div class="container-fluid">
+    <div class="filter">
+        <div class="wrapper">
+            <form #usuarioForm="ngForm" (ngSubmit)="onSubmit()" class="form-login">
 
-            <h3 class="form-login-heading">Potato's System</h3>
-            <hr class="colorgraph">
-            <br>
+                <h3 class="form-login-heading">Potato's System</h3>
+                <hr class="colorgraph">
+                <br>
 
-            <div class="alert alert-info" style="text-align: center;">
-                <strong>Login</strong>
-            </div>
+                <div class="alert alert-info" style="text-align: center;">
+                    <strong>Login</strong>
+                </div>
 
-            <input type="email" class="form-control" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"
-                placeholder="Nombre de Usuario" />
+                <input type="email" class="form-control" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"
+                    placeholder="Nombre de Usuario" />
 
-            <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
-                placeholder="Contraseña" />
+                <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
+                    placeholder="Contraseña" />
 
-            <div *ngIf="errors.errorAll" class="alert alert-danger" role="alert">
-                <strong> Debe llenar todos los espacios </strong>
-            </div>
+                <div *ngIf="errors.errorAll" class="alert alert-danger" role="alert">
+                    <strong> Debe llenar todos los campos </strong>
+                </div>
 
-            <div *ngIf="errors.errorLogin" class="alert alert-danger" role="alert">
-                <strong> {{message}} </strong>
-            </div>
+                <div *ngIf="errors.errorLogin" class="alert alert-danger" role="alert">
+                    <strong> {{message}} </strong>
+                </div>
 
-            <button class="btn btn-lg btn-primary btn-block" type="Submit">Ingresar</button>
+                <button class="btn btn-lg btn-primary btn-block" type="Submit">Ingresar</button>
 
-            <!-- {{user.name ? user.name : user.remember_token}} -->
+                <!-- {{user.name ? user.name : user.remember_token}} -->
 
-        </form>
+            </form>
+        </div>
     </div>
 </div>
