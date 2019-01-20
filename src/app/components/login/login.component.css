@@ -3,7 +3,7 @@
 	margin-bottom: 20px;
 }
 
-.form-signin {
+.form-login {
   max-width: 420px;
   padding: 30px 38px 66px;
   margin: 0 auto;
@@ -11,7 +11,7 @@
   border: 3px dotted rgba(0,0,0,0.1);  
   }
 
-.form-signin-heading {
+.form-login-heading {
   text-align:center;
   margin-bottom: 30px;
 }

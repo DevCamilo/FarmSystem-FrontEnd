@@ -2,11 +2,15 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import {  HttpClientModule } from '@angular/common/http'; 
 
 // Componentes
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+
+// Providers
+import { LoginService } from './providers/login.service';
 
 // Rutas
 import { app_routing } from './app.routes';
@@ -20,9 +24,10 @@ import { app_routing } from './app.routes';
   imports: [
     BrowserModule,
     app_routing,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

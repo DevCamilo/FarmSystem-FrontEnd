@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { LoginService } from '../../providers/login.service';
 
 @Component({
   selector: 'app-login',
@@ -15,16 +15,16 @@ export class LoginComponent implements OnInit {
     errorUserLog: false
   };
 
-  constructor(private _router: Router) {
+  constructor(private login: LoginService) {
     this.user = {
-      user_nickName: '',
-      user_password: ''
+      userName: '',
+      password: ''
     };
   }
 
   onSubmit() {
-    if (this.user.user_nickName && this.user.user_password !== '') {
-      if (this.user.user_password.length <= 7) {
+    if (this.user.userName && this.user.password !== '') {
+      if (this.user.password.length <= 7) {
         this.errors.errorUserLog = false;
         this.errors.errorAll = false;
         this.errors.errorPass = true;
@@ -32,8 +32,10 @@ export class LoginComponent implements OnInit {
         this.errors.errorUserLog = false;
         this.errors.errorPass = false;
         this.errors.errorAll = false;
-        // console.log(this.user);
-
+        console.log(this.user);
+        this.login.loginFunction(this.user).subscribe((res) => {
+          console.log(res)
+        })
         }
       } else {
       this.errors.errorUserLog = false;
