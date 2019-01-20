@@ -1,20 +1,16 @@
 <div class="container-fluid">
     <div class="filter">
-    <app-nav-login></app-nav-login>
+        <app-nav-login></app-nav-login>
         <div class="wrapper">
             <form #usuarioForm="ngForm" (ngSubmit)="onSubmit()" class="form-login">
 
-                <h3 class="form-login-heading">Potato's System</h3>
+                <h3 class="form-login-heading">Login</h3>
                 <hr class="colorgraph">
                 <br>
 
-                <div class="alert alert-info" style="text-align: center;">
-                    <strong>Login</strong>
-                </div>
-
                 <input type="email" class="form-control" [(ngModel)]="user.userName" [ngModelOptions]="{standalone: true}"
                     placeholder="Nombre de Usuario" />
-
+                <br>
                 <input type="password" class="form-control" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}"
                     placeholder="Contraseña" />
 

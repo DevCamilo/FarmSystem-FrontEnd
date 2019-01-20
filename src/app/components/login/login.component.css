@@ -20,7 +20,7 @@
 }
 
 .wrapper {
-  padding-top: 120px;
+  padding-top: 200px;
 }
 
 .form-login {
@@ -43,7 +43,7 @@
   padding: 10px;
 }
 
-input[type="text"] {
+input[type="text"] { 
   margin-bottom: 0px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
