@@ -15,13 +15,15 @@ import { LoginService } from './providers/login.service';
 // Rutas
 import { app_routing } from './app.routes';
 import { NavLoginComponent } from './components/nav-login/nav-login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    NavLoginComponent
+    NavLoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
