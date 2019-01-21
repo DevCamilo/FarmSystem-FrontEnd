@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../../providers/login.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,7 @@ export class LoginComponent implements OnInit {
     errorLogin: false
   };
 
-  constructor(private login: LoginService) {
+  constructor(private login: LoginService, private router: Router) {
     this.user = {
       userName: '',
       password: ''
@@ -32,7 +33,9 @@ export class LoginComponent implements OnInit {
             this.errors.errorLogin = true;
             this.message = res.message;
           } else {
-            console.log(res);
+            localStorage.setItem('token', res.token )
+            localStorage.setItem('user',  JSON.stringify(res.data[0]));
+            return this.router.navigate(['/dashboard']);
           }
         });
         

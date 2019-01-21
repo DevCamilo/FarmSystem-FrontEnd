@@ -16,6 +16,7 @@ import { LoginService } from './providers/login.service';
 import { app_routing } from './app.routes';
 import { NavLoginComponent } from './components/nav-login/nav-login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavDashboardComponent } from './components/nav-dashboard/nav-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     HomeComponent,
     LoginComponent,
     NavLoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavDashboardComponent
   ],
   imports: [
     BrowserModule,
