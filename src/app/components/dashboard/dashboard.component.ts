@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TaskService } from '../../providers/task.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-
-  constructor() { }
+  user: any = JSON.parse(localStorage.getItem('user'));
+  tasks: any;
+  constructor(private task: TaskService) { }
 
   ngOnInit() {
+    this.task.taskIdUser(this.user._id).subscribe((res: any) => {
+      console.log(res);
+        this.tasks = res.data.length;
+    });
   }
 
 }
