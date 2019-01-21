@@ -8,13 +8,15 @@ import { TaskService } from '../../providers/task.service';
 })
 export class DashboardComponent implements OnInit {
   user: any = JSON.parse(localStorage.getItem('user'));
-  tasks: any;
+  taskNum: any;
+  taskCont: any;
   constructor(private task: TaskService) { }
 
   ngOnInit() {
     this.task.taskIdUser(this.user._id).subscribe((res: any) => {
       console.log(res);
-        this.tasks = res.data.length;
+        this.taskNum = res.data.length;
+        this.taskCont = res.data
     });
   }
 
