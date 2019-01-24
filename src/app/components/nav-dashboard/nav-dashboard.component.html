@@ -12,11 +12,11 @@
         <a href="#"><i class="fa fa-binoculars fa-lg"></i> Cultivos <span class="arrow"></span></a>
       </li>
       <ul class="sub-menu collapse" id="crop">
-        <li><a>Crear Cultivo</a></li>
+        <li *ngIf="typeUser"><a>Crear Cultivo</a></li>
         <li><a>Listar Cultivos</a></li>
-        <li><a>Consultar Cultivos</a></li>
+        <li *ngIf="typeUser"><a>Consultar Cultivos</a></li>
       </ul>
-      <li data-toggle="collapse" data-target="#user" class="collapsed">
+      <li *ngIf="typeUser" data-toggle="collapse" data-target="#user" class="collapsed">
         <a href="#"><i class="fa fa-users fa-lg"></i> Usuarios <span class="arrow"></span></a>
       </li>
       <ul class="sub-menu collapse" id="user">
@@ -28,9 +28,9 @@
         <a href="#"><i class="fa fa-clipboard-list fa-lg"></i> Tareas <span class="arrow"></span></a>
       </li>
       <ul class="sub-menu collapse" id="task">
-        <li>Crear Tareas</li>
+        <li *ngIf="typeUser" >Crear Tareas</li>
         <li>Listar Tareas</li>
-        <li>Consultar Tareas</li>
+        <li *ngIf="typeUser">Consultar Tareas</li>
       </ul>
       <li>
         <a href="#">

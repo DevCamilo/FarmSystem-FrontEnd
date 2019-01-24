@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-dashboard.component.css']
 })
 export class NavDashboardComponent implements OnInit {
-
+  user: any = JSON.parse(localStorage.getItem('user'));
+  typeUser: any;
   constructor() { }
 
   clearLocal() {
@@ -14,6 +15,8 @@ export class NavDashboardComponent implements OnInit {
     localStorage.removeItem('user')
   }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.typeUser = this.user.typeUser == 1;
+   }
 
 }

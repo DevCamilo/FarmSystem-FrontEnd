@@ -3,13 +3,13 @@
   <div class="container">
     <div class="jumbotron">
       <h1 class="display-4">Bienvenido, {{user.name}}</h1>
-      <p class="lead">Tiene {{ taskNum }} tareas asignadas.</p>
-      <a *ngIf="true" class="btn btn-primary" data-toggle="collapse" href="#taskCollapse" role="button" aria-expanded="false"
+      <p class="lead">Tiene <b>{{ taskData.taskNum }}</b> tareas asignadas.</p>
+      <a *ngIf="taskData.taskStatus" class="btn btn-primary" data-toggle="collapse" href="#taskCollapse" role="button" aria-expanded="false"
         aria-controls="taskCollapse">Información</a>
       <div class="row">
         <div class="col">
           <div class="collapse multi-collapse" id="taskCollapse" style="padding-top: 10px;">
-            <div class="card card-body" *ngFor="let task of taskCont">
+            <div class="card card-body" *ngFor="let task of taskData.taskCont">
               <h4>{{task.title}}</h4>
               <p>{{task.description}}</p>
             </div>
@@ -17,6 +17,19 @@
         </div>
       </div>
       <hr class="my-4">
+      <p class="lead">Tiene <b>{{cropData.cropNum}}</b> cultivos asignados.</p>
+      <a *ngIf="cropData.cropStatus" class="btn btn-primary" data-toggle="collapse" href="#cropCollapse" role="button" aria-expanded="false"
+        aria-controls="cropCollapse">Información</a>
+      <div class="row">
+        <div class="col">
+          <div class="collapse multi-collapse" id="cropCollapse" style="padding-top: 10px;">
+            <div class="card card-body" *ngFor="let crop of cropData.cropCount">
+              <h4>{{crop.name}}</h4>
+              <p>{{crop.description}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

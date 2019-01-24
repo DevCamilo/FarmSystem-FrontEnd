@@ -7,15 +7,13 @@ const httpOptions = {
   })
 };
 
-@Injectable({
-  providedIn: 'root'
-})
-export class TaskService {
-  url = 'http://localhost:3000/list-task'
+@Injectable()
+export class CropService {
+  url = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
-  taskIdUser(id: any) {
-    return this.http.get(this.url + '-id-receiver/?id=' + id, httpOptions);
+  cropByIdResponsable(id: any) {
+    return this.http.get(this.url + '/list-crop-responsable/?id=' + id, httpOptions);
   }
 }
