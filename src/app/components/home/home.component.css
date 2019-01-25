@@ -8,5 +8,27 @@
   margin-bottom: 50px;
 }
 
-.degrade {
+.grid{
+  padding-top: 20px; 
+  text-align: center;
+}
+
+h4{
+  text-align: justify;
+}
+
+i {
+  font-size: 250px;
+}
+
+@media (max-width: 965px) {
+  i {
+    font-size: 150px;
   }
+}
+
+@media (max-width: 767px) {
+  i {
+    font-size: 250px;
+  }
+}
