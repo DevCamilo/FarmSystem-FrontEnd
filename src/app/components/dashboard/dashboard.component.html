@@ -3,6 +3,7 @@
   <div class="container">
     <div class="jumbotron">
       <h1 class="display-4">Bienvenido, {{user.name}}</h1>
+      <br>
       <p class="lead">Tiene <b>{{ taskData.taskNum }}</b> tareas asignadas.</p>
       <a *ngIf="taskData.taskStatus" class="btn btn-primary" data-toggle="collapse" href="#taskCollapse" role="button" aria-expanded="false"
         aria-controls="taskCollapse">Información</a>

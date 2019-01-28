@@ -110,7 +110,6 @@
     .nav-side-menu {
         position: relative;
         width: 100%;
-        margin-bottom: 10px;
         height: 80px;
     }
     .nav-side-menu .toggle-btn {
@@ -137,6 +136,7 @@
 @media (min-width: 767px) {
     .nav-side-menu .menu-list .menu-content {
         display: block;
+        height: 150px;
     }
 }
 
