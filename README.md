@@ -1,9 +1,9 @@
-# Potatos System FrontEnd
+# Farm System FrontEnd
 
 ## Instalación
 ```
-> git clone https://github.com/DevCamilo/Potatos-System-FrontEnd.git
-> cd Potatos-System-FrontEnd
+> git clone https://github.com/DevCamilo/Farm-System-FrontEnd.git
+> cd Farm-System-FrontEnd
 > npm install
 ```
 

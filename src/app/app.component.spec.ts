@@ -16,16 +16,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'Potatos-System'`, () => {
+  it(`should have as title 'Farm-System'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('Potatos-System');
+    expect(app.title).toEqual('Farm-System');
   });
 
   it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Potatos-System!');
+    expect(compiled.querySelector('h1').textContent).toContain('Welcome to Farm-System!');
   });
 });
