@@ -5,28 +5,58 @@
       <h1 class="display-4">Crear Cultvo</h1>
       <br />
       <form #cultivoForm="ngForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
 
-        <div class="form-group">
-          <label>Nombre del Cultivo</label>
-          <input type="text" class="form-control" id="name" placeholder="Cultivo " [(ngModel)]="crop.name"
-            [ngModelOptions]="{standalone: true}">
+            <div class="form-group">
+              <label for="validationTooltipUsername">Nombre del Cultivo</label>
+              <input type="text" class="form-control" id="name" placeholder="Cultivo " [(ngModel)]="crop.name"
+                [ngModelOptions]="{standalone: true}">
+            </div>
+
+            <div class="form-group">
+              <label>Descripción</label>
+              <textarea class="form-control" placeholder="Información" [(ngModel)]="crop.description" rows="3"
+                [ngModelOptions]="{standalone: true}"> </textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="validationTooltipUsername">Plagas</label>
+                <input type="text" class="form-control" id="name" placeholder="Cultivo " [(ngModel)]="crop.name"
+                  [ngModelOptions]="{standalone: true}">
+            </div>
+          
+          </div>
+          
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label>Responsable</label>
+              <select class="form-control" [(ngModel)]="crop.responsable" [ngModelOptions]="{standalone: true}">
+                <option *ngFor="let employee of employees" [value]="employee._id">{{employee.name}}</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Empleados</label>
+              <div class="form-check" *ngFor="let employee of employees">
+                <label class="form-check-label">
+                  <input [(ngModel)]="crop.employees[employee._id]" [ngModelOptions]="{standalone: true}" type="checkbox"
+                    class="form-check-input">{{employee.name}}
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+                <label>Comentarios</label>
+                <textarea class="form-control" placeholder="Información" [(ngModel)]="crop.comment" rows="3"
+                  [ngModelOptions]="{standalone: true}"> </textarea>
+            </div>
+
+          </div>
         </div>
 
-        <div class="form-group">
-          <label>Descripción</label>
-          <input type="text" class="form-control" placeholder="Información" [(ngModel)]="crop.description"
-            [ngModelOptions]="{standalone: true}">
-        </div>
-
-        <div class="form-group">
-          <label>Responsable</label>
-          <select class="form-control ">
-            <option selected>Colaboradores</option>
-            <option value="1">Usuario</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button class="btn btn-primary" type="submit">Crear</button>
       </form>
     </div>
   </div>

@@ -17,6 +17,7 @@ import { CreateCropComponent } from './components/crops/create-crop/create-crop.
 import { LoginService } from './providers/login.service';
 import { TaskService } from './providers/task.service';
 import { CropService } from './providers/crop.service';
+import { UserService } from './providers/user.service';
 
 // Rutas
 import { app_routing } from './app.routes';
@@ -40,7 +41,8 @@ import { app_routing } from './app.routes';
   providers: [
     LoginService,
     TaskService,
-    CropService
+    CropService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })
