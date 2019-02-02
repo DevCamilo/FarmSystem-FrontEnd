@@ -1,0 +1,33 @@
+<app-nav-dashboard></app-nav-dashboard>
+<div class="content">
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Crear Cultvo</h1>
+      <br />
+      <form #cultivoForm="ngForm" (ngSubmit)="onSubmit()">
+
+        <div class="form-group">
+          <label>Nombre del Cultivo</label>
+          <input type="text" class="form-control" id="name" placeholder="Cultivo " [(ngModel)]="crop.name"
+            [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="form-group">
+          <label>Descripción</label>
+          <input type="text" class="form-control" placeholder="Información" [(ngModel)]="crop.description"
+            [ngModelOptions]="{standalone: true}">
+        </div>
+
+        <div class="form-group">
+          <label>Responsable</label>
+          <select class="form-control ">
+            <option selected>Colaboradores</option>
+            <option value="1">Usuario</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>

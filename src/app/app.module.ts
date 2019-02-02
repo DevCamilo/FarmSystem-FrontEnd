@@ -2,7 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {  HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http'; 
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { NavLoginComponent } from './components/nav-login/nav-login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavDashboardComponent } from './components/nav-dashboard/nav-dashboard.component';
+import { CreateCropComponent } from './components/crops/create-crop/create-crop.component';
 
 // Providers
 import { LoginService } from './providers/login.service';
@@ -27,7 +28,8 @@ import { app_routing } from './app.routes';
     LoginComponent,
     NavLoginComponent,
     DashboardComponent,
-    NavDashboardComponent
+    NavDashboardComponent,
+    CreateCropComponent
   ],
   imports: [
     BrowserModule,

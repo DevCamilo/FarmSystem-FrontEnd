@@ -1,5 +1,5 @@
 <div class="nav-side-menu">
-  <div class="brand">Farm System</div>
+  <div class="brand">Farm's System</div>
   <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
   <div class="menu-list">
     <ul id="menu-content" class="menu-content collapse out">
@@ -12,7 +12,7 @@
         <a href="#"><i class="fa fa-binoculars fa-lg"></i> Cultivos <span class="arrow"></span></a>
       </li>
       <ul class="sub-menu collapse" id="crop">
-        <li *ngIf="typeUser"><a>Crear Cultivo</a></li>
+        <li *ngIf="typeUser" routerLink="/dashboard/create-crop"><a>Crear Cultivo</a></li>
         <li><a>Listar Cultivos</a></li>
         <li *ngIf="typeUser"><a>Consultar Cultivos</a></li>
       </ul>
