@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
 export class CreateCropComponent implements OnInit {
   crop: any;
   user = JSON.parse(localStorage.getItem('user'));
+  token = localStorage.getItem('token');
   employees = [];
 
   constructor(private crops: CropService, private clients: UserService) {
@@ -34,7 +35,7 @@ export class CreateCropComponent implements OnInit {
 
   onSubmit() {
     //console.log(this.crop);
-    this.crops.saveCropFunction(this.crop).subscribe((res: any) => {
+    this.crops.saveCropFunction(this.crop, this.token).subscribe((res: any) => {
       //console.log(res); 
       if (res.status) {
         Swal({
