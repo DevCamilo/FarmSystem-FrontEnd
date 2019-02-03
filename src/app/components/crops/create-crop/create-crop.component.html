@@ -19,15 +19,15 @@
               <textarea class="form-control" placeholder="Información" [(ngModel)]="crop.description" rows="3"
                 [ngModelOptions]="{standalone: true}"> </textarea>
             </div>
-            
+
             <div class="form-group">
-                <label for="validationTooltipUsername">Plagas</label>
-                <input type="text" class="form-control" id="name" placeholder="Cultivo " [(ngModel)]="crop.name"
-                  [ngModelOptions]="{standalone: true}">
+              <label for="validationTooltipUsername">Plagas</label>
+              <input type="text" class="form-control" id="name" placeholder="Cultivo " [(ngModel)]="crop.pests"
+                [ngModelOptions]="{standalone: true}">
             </div>
-          
+
           </div>
-          
+
           <div class="col-md-6">
 
             <div class="form-group">
@@ -41,16 +41,16 @@
               <label>Empleados</label>
               <div class="form-check" *ngFor="let employee of employees">
                 <label class="form-check-label">
-                  <input [(ngModel)]="crop.employees[employee._id]" [ngModelOptions]="{standalone: true}" type="checkbox"
-                    class="form-check-input">{{employee.name}}
+                  <input (change)="saveEmployeer(employee._id)" [(ngModel)]="crop.employees[employee._id]" [ngModelOptions]="{standalone: true}"
+                    type="checkbox" [value]="employee._id" class="form-check-input">{{employee.name}}
                 </label>
               </div>
             </div>
 
             <div class="form-group">
-                <label>Comentarios</label>
-                <textarea class="form-control" placeholder="Información" [(ngModel)]="crop.comment" rows="3"
-                  [ngModelOptions]="{standalone: true}"> </textarea>
+              <label>Comentarios</label>
+              <textarea class="form-control" placeholder="Información" [(ngModel)]="crop.comment" rows="3"
+                [ngModelOptions]="{standalone: true}"> </textarea>
             </div>
 
           </div>
@@ -60,4 +60,5 @@
       </form>
     </div>
   </div>
+  <div style="height: 78px;"></div>
 </div>

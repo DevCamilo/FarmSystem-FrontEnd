@@ -3,7 +3,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-Type': 'application/json'
+    'Content-Type': 'application/json',
+    'Authorization': 'Bearer '+ localStorage.getItem('token')
   })
 };
 
@@ -15,5 +16,9 @@ export class CropService {
 
   cropByIdResponsable(id: any) {
     return this.http.get(this.url + '/list-crop-responsable/?id=' + id, httpOptions);
+  }
+
+  saveCropFunction(crop: any) {
+    return this.http.post(this.url + '/create-crop', crop, httpOptions);
   }
 }

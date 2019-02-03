@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http'; 
+import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
 
 // Componentes
 import { AppComponent } from './app.component';
@@ -36,7 +37,13 @@ import { app_routing } from './app.routes';
     BrowserModule,
     app_routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SweetAlert2Module.forRoot({
+      buttonsStyling: false,
+      customClass: 'modal-content',
+      confirmButtonClass: 'btn btn-primary',
+      cancelButtonClass: 'btn'
+  })
   ],
   providers: [
     LoginService,
