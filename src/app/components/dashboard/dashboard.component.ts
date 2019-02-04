@@ -8,7 +8,9 @@ import { CropService } from 'src/app/providers/crop.service';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  p: number = 1;
   user: any = JSON.parse(localStorage.getItem('user'));
+  token: any = localStorage.getItem('token');
   taskData: any = {
     taskNum: 0,
     taskCount: [],
@@ -28,7 +30,7 @@ export class DashboardComponent implements OnInit {
       this.taskData.taskCont = res.data
       this.taskData.taskStatus = res.data.length > 0;
     });
-    this.crop.cropByIdResponsable(this.user._id).subscribe((res: any) => {
+    this.crop.cropByIdResponsable(this.user._id, this.token).subscribe((res: any) => {
       //console.log(res);
       this.cropData.cropNum = res.data.length;
       this.cropData.cropCount = res.data;

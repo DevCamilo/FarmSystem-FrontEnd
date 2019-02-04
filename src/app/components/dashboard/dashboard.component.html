@@ -10,10 +10,12 @@
       <div class="row">
         <div class="col">
           <div class="collapse multi-collapse" id="taskCollapse" style="padding-top: 10px;">
-            <div class="card card-body" *ngFor="let task of taskData.taskCont">
+            <div class="card card-body" *ngFor="let task of taskData.taskCont | paginate: { itemsPerPage: 5, currentPage: p }">
               <h4>{{task.title}}</h4>
               <p>{{task.description}}</p>
+              <small>{{task.created_at.split("T", 1)}}</small>
             </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
         </div>
       </div>
@@ -24,10 +26,12 @@
       <div class="row">
         <div class="col">
           <div class="collapse multi-collapse" id="cropCollapse" style="padding-top: 10px;">
-            <div class="card card-body" *ngFor="let crop of cropData.cropCount">
+            <div class="card card-body" *ngFor="let crop of cropData.cropCount | paginate: { itemsPerPage: 5, currentPage: p }">
               <h4>{{crop.name}}</h4>
               <p>{{crop.description}}</p>
+              <small>{{crop.created_at.split("T", 1)}}</small>
             </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
         </div>
       </div>
