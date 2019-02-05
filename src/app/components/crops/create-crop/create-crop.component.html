@@ -11,7 +11,7 @@
             <div class="form-group">
               <label for="validationTooltipUsername">Nombre del Cultivo</label>
               <input type="text" class="form-control" id="name" placeholder="Cultivo " [(ngModel)]="crop.name"
-                [ngModelOptions]="{standalone: true}">
+                [ngModelOptions]="{standalone: true}" autocomplete="off">
             </div>
 
             <div class="form-group">
@@ -30,7 +30,7 @@
             <div class="form-group">
               <label for="validationTooltipUsername">Plagas</label>
               <input type="text" class="form-control" id="name" placeholder="Pestes " [(ngModel)]="crop.pests"
-                [ngModelOptions]="{standalone: true}">
+                [ngModelOptions]="{standalone: true}" autocomplete="off">
             </div>
 
           </div>

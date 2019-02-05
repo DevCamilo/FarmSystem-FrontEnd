@@ -5,15 +5,15 @@
       <h1 class="display-4">Bienvenido, {{user.name}}</h1>
       <br>
       <p class="lead">Tiene <b>{{ taskData.taskNum }}</b> tareas asignadas.</p>
-      <a *ngIf="taskData.taskStatus" class="btn btn-primary" data-toggle="collapse" href="#taskCollapse" role="button" aria-expanded="false"
-        aria-controls="taskCollapse">Información</a>
+      <a *ngIf="taskData.taskStatus" class="btn btn-primary" data-toggle="collapse" href="#taskCollapse" role="button"
+        aria-expanded="false" aria-controls="taskCollapse">Información</a>
       <div class="row">
         <div class="col">
           <div class="collapse multi-collapse" id="taskCollapse" style="padding-top: 10px;">
             <div class="card card-body" *ngFor="let task of taskData.taskCont | paginate: { itemsPerPage: 5, currentPage: p }">
               <h4>{{task.title}}</h4>
               <p>{{task.description}}</p>
-              <small>{{task.created_at.split("T", 1)}}</small>
+              <small>{{task.created_at.split("T", 1)}} | {{task.created_at.substr(11,8)}}</small>
             </div>
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>
@@ -21,15 +21,27 @@
       </div>
       <hr class="my-4">
       <p class="lead">Tiene <b>{{cropData.cropNum}}</b> cultivos asignados.</p>
-      <a *ngIf="cropData.cropStatus" class="btn btn-primary" data-toggle="collapse" href="#cropCollapse" role="button" aria-expanded="false"
-        aria-controls="cropCollapse">Información</a>
+      <a *ngIf="cropData.cropStatus" class="btn btn-primary" data-toggle="collapse" href="#cropCollapse" role="button"
+        aria-expanded="false" aria-controls="cropCollapse">Información</a>
       <div class="row">
         <div class="col">
           <div class="collapse multi-collapse" id="cropCollapse" style="padding-top: 10px;">
             <div class="card card-body" *ngFor="let crop of cropData.cropCount | paginate: { itemsPerPage: 5, currentPage: p }">
-              <h4>{{crop.name}}</h4>
-              <p>{{crop.description}}</p>
-              <small>{{crop.created_at.split("T", 1)}}</small>
+              <div class="row">
+                <div class="col-md-6">
+                  <h4>{{crop.name}}</h4>
+                  <p>{{crop.description}}</p>
+                  <small><strong>Comentarios:</strong></small>
+                  <p>{{crop.comment}}</p>
+                </div>
+                <div class="col-md-6">
+                  <h6>Empleados:</h6>
+                  <ul *ngFor=" let employee of crop.employees">
+                    <li>{{employee.name}}</li>
+                  </ul>
+                </div>
+              </div>
+              <small>{{crop.created_at.split("T", 1)}} | {{crop.created_at.substr(11,8)}}</small>
             </div>
             <pagination-controls (pageChange)="p = $event"></pagination-controls>
           </div>

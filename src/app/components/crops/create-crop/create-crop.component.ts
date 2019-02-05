@@ -28,7 +28,7 @@ export class CreateCropComponent implements OnInit {
   ngOnInit() {
     //console.log(this.user);
     this.clients.listUserFunction().subscribe((res: any) => {
-      console.log(res);
+      //console.log(res);
       this.employees = res.data;
     });
   }

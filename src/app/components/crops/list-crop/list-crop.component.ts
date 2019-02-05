@@ -13,7 +13,7 @@ export class ListCropComponent implements OnInit {
 
   ngOnInit() {
     this.crop.listAllCrops().subscribe((res: any) => {
-      console.log(res);
+      //console.log(res);
       this.listcrop = res.data
     });
   }
