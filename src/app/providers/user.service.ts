@@ -18,4 +18,8 @@ export class UserService {
   listUserFunction() {
     return this.http.get(this.url + '/list-client', httpOptions);
   }
+
+  createUserFunction(user: any){
+    return this.http.post(this.url + '/create-client', user, httpOptions );
+  }
 }

@@ -15,6 +15,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NavDashboardComponent } from './components/nav-dashboard/nav-dashboard.component';
 import { CreateCropComponent } from './components/crops/create-crop/create-crop.component';
 import { ListCropComponent } from './components/crops/list-crop/list-crop.component';
+import { CreateUserComponent } from './components/users/create-user/create-user.component';
+
 
 // Providers
 import { LoginService } from './providers/login.service';
@@ -34,7 +36,8 @@ import { app_routing } from './app.routes';
     DashboardComponent,
     NavDashboardComponent,
     CreateCropComponent,
-    ListCropComponent
+    ListCropComponent,
+    CreateUserComponent
   ],
   imports: [
     BrowserModule,
