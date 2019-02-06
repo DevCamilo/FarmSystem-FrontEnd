@@ -9,13 +9,14 @@ import Swal from 'sweetalert2';
 })
 export class CreateUserComponent implements OnInit {
   user: any;
+  token: any = localStorage.getItem('token');
   constructor(private userAPI: UserService) {
     this.user = {
       name: "",
       lastName: "",
       telephone: "",
       document: "",
-      typeUser: 0,
+      typeUser: 1,
       userName: "",
       password: ""
     }
@@ -25,7 +26,7 @@ export class CreateUserComponent implements OnInit {
   }
 
   onSubmit() {
-    this.userAPI.createUserFunction(this.user).subscribe((res: any) => {
+    this.userAPI.createUserFunction(this.user, this.token).subscribe((res: any) => {
       console.log(res);
       if (res.status){
         Swal({

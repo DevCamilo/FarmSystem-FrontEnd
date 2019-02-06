@@ -12,6 +12,7 @@
             <th scope="col">Descripción</th>
             <th scope="col">Responsable</th>
             <th scope="col">Fecha</th>
+            <th scope="col">Detalles</th>
           </tr>
         </thead>
         <tbody>
@@ -21,6 +22,7 @@
             <td>{{crop.description}}</td>
             <td>{{crop.responsable.name}}</td>
             <td>{{crop.created_at.split("T", 1)}}  {{crop.created_at.substr(11,8)}}</td>
+            <td><button class="btn btn-success" [routerLink]="['/dashboard/update-crop', { _id: crop._id}]">Info</button></td>
           </tr>
         </tbody>
       </table>

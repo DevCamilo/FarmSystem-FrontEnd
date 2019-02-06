@@ -14,7 +14,7 @@
       <ul class="sub-menu collapse" id="crop">
         <li *ngIf="typeUser" routerLink="/dashboard/create-crop"><a>Crear Cultivo</a></li>
         <li routerLink="/dashboard/list-crop"><a>Listar Cultivos</a></li>
-        <li *ngIf="typeUser"><a>Consultar Cultivos</a></li>
+        <li *ngIf="typeUser" routerLink="/dashboard/update-crop"><a>Consultar Cultivos</a></li>
       </ul>
       <li *ngIf="typeUser" data-toggle="collapse" data-target="#user" class="collapsed">
         <a><i class="fa fa-users fa-lg"></i> Usuarios <span class="arrow"></span></a>

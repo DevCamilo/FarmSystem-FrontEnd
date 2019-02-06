@@ -35,4 +35,13 @@ export class CropService {
     };
     return this.http.get(this.url + '/list-crop', httpOptions);
   }
+
+  listCropById(id: string){
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json'
+      })
+    };
+    return this.http.get(this.url + '/list-crop-id/?id=' + id, httpOptions);
+  }
 }
