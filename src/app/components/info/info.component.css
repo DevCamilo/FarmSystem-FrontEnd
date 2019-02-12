@@ -1,0 +1,17 @@
+.content {
+    padding-left: 300px;
+    padding-top: 15px;
+    background-image: url(../../../assets/dashboard.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+@media (max-width: 767px) {
+    .content {
+        padding-left: 0px;
+        padding-top: 20px;
+    }
+}

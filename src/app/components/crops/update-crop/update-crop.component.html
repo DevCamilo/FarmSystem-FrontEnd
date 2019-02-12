@@ -3,9 +3,18 @@
   <div class="container">
     <div class="jumbotron">
       <h1 class="display-4">Consultar Cultivo</h1>
-      {{crop2.name}}
-      {{crop2.description}}
-      {{crop2.created_at}}
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <label>Nombre:</label>
+          <h1>{{crop.name}}</h1>
+        </div>
+        <div class="col-md-6">
+          <label>Descripción:</label>
+          <h1>{{crop.description}}</h1>
+        </div>
+      </div>
+      {{crop.created_at}}
     </div>
   </div>
 </div>

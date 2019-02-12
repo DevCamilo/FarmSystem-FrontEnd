@@ -1,0 +1,22 @@
+<app-nav-dashboard></app-nav-dashboard>
+<div class="content">
+  <div class="container">
+    <div class="jumbotron">
+      <h1 class="display-4">Tipos de Cultivo</h1>
+      <br />
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Cultivos</label>
+          <select class="form-control" [(ngModel)]="crop_id" [ngModelOptions]="{standalone: true}">
+            <option value="Papa Pastusa">Papa Pastusa</option>
+            <option value="Yuca">Yuca</option>
+            <option value="Platano">Platano</option>
+            <option value="Fresas">Fresas</option>
+            <option value="Zanahoria">Zanahoria</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</div>

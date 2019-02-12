@@ -6,6 +6,7 @@ import { CreateCropComponent } from './components/crops/create-crop/create-crop.
 import { ListCropComponent } from './components/crops/list-crop/list-crop.component';
 import { CreateUserComponent } from './components/users/create-user/create-user.component';
 import { UpdateCropComponent } from './components/crops/update-crop/update-crop.component';
+import { InfoComponent } from './components/info/info.component';
 
 const app_routes: Routes = [
     { path: '', component: HomeComponent },
@@ -14,7 +15,8 @@ const app_routes: Routes = [
     { path: 'dashboard/create-crop', component: CreateCropComponent },
     { path: 'dashboard/list-crop', component: ListCropComponent },
     { path: 'dashboard/create-user', component: CreateUserComponent },
-    { path: 'dashboard/update-crop', component: UpdateCropComponent }
+    { path: 'dashboard/update-crop', component: UpdateCropComponent },
+    { path: 'dashboard/info', component: InfoComponent }
 ];
 
 export const app_routing = RouterModule.forRoot(app_routes);

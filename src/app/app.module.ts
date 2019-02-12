@@ -17,6 +17,7 @@ import { CreateCropComponent } from './components/crops/create-crop/create-crop.
 import { ListCropComponent } from './components/crops/list-crop/list-crop.component';
 import { CreateUserComponent } from './components/users/create-user/create-user.component';
 import { UpdateCropComponent } from './components/crops/update-crop/update-crop.component';
+import { InfoComponent } from './components/info/info.component';
 
 // Providers
 import { LoginService } from './providers/login.service';
@@ -38,7 +39,8 @@ import { app_routing } from './app.routes';
     CreateCropComponent,
     ListCropComponent,
     CreateUserComponent,
-    UpdateCropComponent
+    UpdateCropComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

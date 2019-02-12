@@ -9,9 +9,9 @@ import { CropService } from 'src/app/providers/crop.service';
 })
 export class UpdateCropComponent implements OnInit {
   _id: any;
-  crop2: any;
+  crop: any;
   constructor(private route: ActivatedRoute, private cropAPI: CropService) { 
-    this.crop2 = {};
+    this.crop = {};
   }
 
   ngOnInit() {
@@ -20,7 +20,7 @@ export class UpdateCropComponent implements OnInit {
       this.cropAPI.listCropById(this._id).subscribe((res :any) => {
         console.log(res);
         if(res.data){
-          this.crop2 = res.data;
+          this.crop = res.data;
         } else {
 
         }

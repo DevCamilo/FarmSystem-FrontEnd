@@ -20,7 +20,7 @@
         <a><i class="fa fa-users fa-lg"></i> Usuarios <span class="arrow"></span></a>
       </li>
       <ul class="sub-menu collapse" id="user">
-        <li routerLink="/dashboard/create-user" >Crear Usuarios</li>
+        <li routerLink="/dashboard/create-user">Crear Usuarios</li>
         <li>Listar Usuarios</li>
         <li>Consultar Usuarios</li>
       </ul>
@@ -28,10 +28,15 @@
         <a><i class="fa fa-clipboard-list fa-lg"></i> Tareas <span class="arrow"></span></a>
       </li>
       <ul class="sub-menu collapse" id="task">
-        <li *ngIf="typeUser" >Crear Tareas</li>
+        <li *ngIf="typeUser">Crear Tareas</li>
         <li>Listar Tareas</li>
         <li *ngIf="typeUser">Consultar Tareas</li>
       </ul>
+        <li routerLink="/dashboard/info">
+          <a>
+            <i class="fa fa-question-circle"></i> Tipos de Cultivo
+          </a>
+        </li>
       <li>
         <a>
           <i class="fa fa-user fa-lg"></i> Perfil
